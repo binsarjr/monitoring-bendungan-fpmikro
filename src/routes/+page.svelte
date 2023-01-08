@@ -1,6 +1,13 @@
 <script>
-
-	import { ketinggianAir } from "$lib/stores/ketinggianAir";
-
+	import DataGrafik from '../lib/components/DataGrafik.svelte';
+	import StatusBendungan from '../lib/components/StatusBendungan.svelte';
+	import { ketinggianAir } from '../lib/stores/iot';
 </script>
-ketinggian air saat ini adalah {$ketinggianAir}
+
+<main class="px-4 py-2 md:container">
+	<div class="flex flex-col gap justify-center items-center">
+		<StatusBendungan />
+		<div>Ketinggian Air Saat ini {$ketinggianAir}</div>
+		<DataGrafik />
+	</div>
+</main>
